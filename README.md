@@ -36,3 +36,11 @@ exports.get = function(req, res){
 ```js
 app.get('/my/route', routes.myRoute.get);
 ```
+
+## Run the server
+
+No surprise here, just run `app.js` through node:
+
+```
+node app.js
+```
