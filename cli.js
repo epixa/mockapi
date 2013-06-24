@@ -9,8 +9,8 @@ var route = [
 ].join(os.EOL);
 
 var app = [
-    'var express = require(\'express\')'
-  , '  , strapi = require(\'strapi\');'
+    'var strapi = require(\'strapi\')'
+  , '  , express = strapi.express'
   , ''
   , 'var app = express();'
   , 'var routes = strapi.routes(\'routes\', __dirname);'
@@ -22,7 +22,7 @@ var app = [
   , 'app.use(strapi.middleware.forceJsonResponse());'
   , 'app.use(app.router);'
   , 'app.use(strapi.middleware.notFoundHandler());'
-  , 'app.use(strapi.middleware.errorHandler(app.get(\'env\'));'
+  , 'app.use(strapi.middleware.errorHandler(app.get(\'env\')));'
   , ''
   , '// api routes'
   , 'app.get(\'/hello/:world\', routes.hello.get);'

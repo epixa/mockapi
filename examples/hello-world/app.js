@@ -1,5 +1,5 @@
-var express = require('express')
-  , strapi = require('../../lib/strapi');
+var strapi = require('../../lib/strapi')
+  , express = strapi.express;
 
 var app = express();
 var routes = strapi.routes('routes', __dirname);
