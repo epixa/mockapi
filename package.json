@@ -1,7 +1,7 @@
 {
   "name": "strapi",
   "description": "A quick and dirty api framework. Great for quickly mocking out or prototyping an api.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Court Ewing <court@epixa.com>",
   "keywords": [
     "api", "framework", "rest", "restful", "prototype", "mock", "express", "strapi"
