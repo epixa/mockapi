@@ -12,8 +12,13 @@ npm install -g strapi
 
 ## Usage / Getting Started
 
-Simply execute `strapi` from within a working directory, and your api is
-bootstrapped and ready to go.
+Simply run strapi from within a working directory, and your api is bootstrapped
+and ready to go:
+
+```
+cd /path/to/your/strapi/project
+strapi
+```
 
 ## Creating your own routes
 
