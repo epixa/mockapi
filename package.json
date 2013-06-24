@@ -1,7 +1,7 @@
 {
   "name": "strapi",
   "description": "A quick and dirty api framework. Great for quickly mocking out or prototyping an api.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Court Ewing <court@epixa.com>",
   "keywords": [
     "api", "framework", "rest", "restful", "prototype", "mock", "express", "strapi"
@@ -12,7 +12,7 @@
   "repository": "git://github.com/epixa/strapi",
   "main": "index",
   "bin": {
-    "quickapi": "./bin/strapi"
+    "strapi": "./bin/strapi"
   },
   "engines": {
     "node": "0.10.x"
