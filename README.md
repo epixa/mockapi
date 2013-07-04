@@ -7,17 +7,18 @@ but its specifically tailored for building REST APIs that return JSON.
 ## Installation
 
 ```js
-npm install -g strapi
+$ npm install -g strapi
 ```
 
 ## Usage / Getting Started
 
-Simply run strapi from within a working directory, and your api is bootstrapped
-and ready to go:
+Simply run `strapi` from within a working directory, run `npm install`, and
+your api is bootstrapped and ready to go:
 
 ```
-cd /path/to/your/strapi/project
-strapi
+$ cd /path/to/your/strapi/project
+$ strapi
+$ npm install
 ```
 
 ## Creating your own routes
@@ -47,5 +48,5 @@ app.get('/my/route', routes.myRoute.get);
 No surprise here, just run `app.js` through node:
 
 ```
-node app.js
+$ node app.js
 ```
