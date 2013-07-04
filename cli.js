@@ -10,7 +10,7 @@ var route = [
 
 var app = [
     'var strapi = require(\'strapi\')'
-  , '  , express = strapi.express'
+  , '  , express = strapi.express;'
   , ''
   , 'var app = express();'
   , 'var routes = strapi.routes(\'routes\', __dirname);'
@@ -33,12 +33,27 @@ var app = [
   , ''
 ].join(os.EOL);
 
+var pkg = JSON.stringify({
+  name: "api-name",
+  version: "0.0.1",
+  private: true,
+  scripts: {
+    start: "node app.js"
+  },
+  dependencies: {
+    strapi: require('./package.json').version
+  }
+});
+
 // make routes directories
 fs.mkdir('./routes', '0755', function(err){
   if (err) throw err;
-  fs.writeFile('./app.js', app);
-  console.log('   \x1b[36mcreate\x1b[0m : app.js');
-
-  fs.writeFile('./routes/hello.js', route);
-  console.log('   \x1b[36mcreate\x1b[0m : routes/hello.js');
+  createFile('package.json', pkg);
+  createFile('app.js', app);
+  createFile('routes/hello.js', route);
 });
+
+function createFile(path, content) {
+  fs.writeFile('./' + path, content);
+  console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+}
