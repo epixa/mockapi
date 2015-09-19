@@ -1,23 +1,23 @@
-# Strapi - Bootstrap your api
+# mockapi - Bootstrap your api
 
-A quick and dirty API framework, strapi is best suited for rapidly building
+A quick and dirty API framework, mockapi is best suited for rapidly building
 API prototypes or mock APIs. It's built on [express](http://expressjs.com/),
 but its specifically tailored for building REST APIs that return JSON.
 
 ## Installation
 
 ```js
-$ npm install -g strapi
+$ npm install -g mockapi
 ```
 
 ## Usage / Getting Started
 
-Simply run `strapi` from within a working directory, run `npm install`, and
+Simply run `mockapi` from within a working directory, run `npm install`, and
 your api is bootstrapped and ready to go:
 
 ```
-$ cd /path/to/your/strapi/project
-$ strapi
+$ cd /path/to/your/mockapi/project
+$ mockapi
 $ npm install
 ```
 

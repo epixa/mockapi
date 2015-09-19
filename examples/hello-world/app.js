@@ -1,17 +1,17 @@
-var strapi = require('../../lib/strapi')
-  , express = strapi.express;
+var mockapi = require('../../lib/mockapi')
+  , express = mockapi.express;
 
 var app = express();
-var routes = strapi.routes('routes', __dirname);
+var routes = mockapi.routes('routes', __dirname);
 
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
-app.use(strapi.middleware.forceJsonResponse());
+app.use(mockapi.middleware.forceJsonResponse());
 app.use(app.router);
-app.use(strapi.middleware.notFoundHandler());
-app.use(strapi.middleware.errorHandler(app.get('env')));
+app.use(mockapi.middleware.notFoundHandler());
+app.use(mockapi.middleware.errorHandler(app.get('env')));
 
 // api routes
 app.get('/hello/:world', routes.hello.get);

@@ -1,18 +1,18 @@
 {
-  "name": "strapi",
+  "name": "mockapi",
   "description": "A quick and dirty api framework. Great for quickly mocking out or prototyping an api.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Court Ewing <court@epixa.com>",
   "keywords": [
-    "api", "framework", "rest", "restful", "prototype", "mock", "express", "strapi"
+    "api", "framework", "rest", "restful", "prototype", "mock", "express", "mockapi"
   ],
   "dependencies": {
     "express": "3.2.x"
   },
-  "repository": "git://github.com/epixa/strapi",
+  "repository": "git://github.com/epixa/mockapi",
   "main": "index",
   "bin": {
-    "strapi": "./bin/strapi"
+    "mockapi": "./bin/mockapi"
   },
   "engines": {
     "node": "0.10.x"
