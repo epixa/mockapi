@@ -1,1 +1,1 @@
-module.exports = require('./lib/strapi');
+module.exports = require('./lib/mockapi');
