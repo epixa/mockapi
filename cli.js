@@ -47,6 +47,7 @@ var pkg = JSON.stringify({
     start: "node app.js"
   },
   dependencies: {
+    express: require('./package.json').dependencies.express,
     mockapi: require('./package.json').version
   }
 });
