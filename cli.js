@@ -50,7 +50,7 @@ var pkg = JSON.stringify({
     express: require('./package.json').dependencies.express,
     mockapi: require('./package.json').version
   }
-});
+}, null, 2);
 
 // make routes directories
 fs.mkdir('./routes', '0755', function(err) {
