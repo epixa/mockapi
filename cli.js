@@ -1,36 +1,42 @@
-var os = require('os')
-  , fs = require('fs');
+'use strict';
+
+var os = require('os');
+var fs = require('fs');
 
 var route = [
-    'exports.get = function(req, res){'
-  , '  res.json({ hello: req.params.world });'
-  , '};'
-  , ''
+  '\'use strict\';',
+  '',
+  'exports.get = function(req, res) {',
+  '  res.json({ hello: req.params.world });',
+  '};',
+  ''
 ].join(os.EOL);
 
 var app = [
-    'var mockapi = require(\'mockapi\')'
-  , '  , express = mockapi.express;'
-  , ''
-  , 'var app = express();'
-  , 'var routes = mockapi.routes(\'routes\', __dirname);'
-  , ''
-  , 'app.set(\'port\', process.env.PORT || 3000);'
-  , 'app.use(express.favicon());'
-  , 'app.use(express.logger(\'dev\'));'
-  , 'app.use(express.bodyParser());'
-  , 'app.use(mockapi.middleware.forceJsonResponse());'
-  , 'app.use(app.router);'
-  , 'app.use(mockapi.middleware.notFoundHandler());'
-  , 'app.use(mockapi.middleware.errorHandler(app.get(\'env\')));'
-  , ''
-  , '// api routes'
-  , 'app.get(\'/hello/:world\', routes.hello.get);'
-  , ''
-  , 'app.listen(app.get(\'port\'), function(){'
-  , '  console.log(\'Mock API server listening on port \' + app.get(\'port\'));'
-  , '});'
-  , ''
+  '\'use strict\';',
+  '',
+  'var mockapi = require(\'mockapi\');',
+  'var express = mockapi.express;',
+  '',
+  'var app = express();',
+  'var routes = mockapi.routes(\'routes\', __dirname);',
+  '',
+  'app.set(\'port\', process.env.PORT || 3000);',
+  'app.use(express.favicon());',
+  'app.use(express.logger(\'dev\'));',
+  'app.use(express.bodyParser());',
+  'app.use(mockapi.middleware.forceJsonResponse());',
+  'app.use(app.router);',
+  'app.use(mockapi.middleware.notFoundHandler());',
+  'app.use(mockapi.middleware.errorHandler(app.get(\'env\')));',
+  '',
+  '// api routes',
+  'app.get(\'/hello/:world\', routes.hello.get);',
+  '',
+  'app.listen(app.get(\'port\'), function() {',
+  '  console.log(\'Mock API server listening on port \' + app.get(\'port\'));',
+  '});',
+  ''
 ].join(os.EOL);
 
 var pkg = JSON.stringify({
@@ -46,7 +52,7 @@ var pkg = JSON.stringify({
 });
 
 // make routes directories
-fs.mkdir('./routes', '0755', function(err){
+fs.mkdir('./routes', '0755', function(err) {
   if (err) throw err;
   createFile('package.json', pkg);
   createFile('app.js', app);

@@ -1,5 +1,7 @@
-var mockapi = require('../../lib/mockapi')
-  , express = mockapi.express;
+'use strict';
+
+var mockapi = require('../../lib/mockapi');
+var express = mockapi.express;
 
 var app = express();
 var routes = mockapi.routes('routes', __dirname);
@@ -16,6 +18,6 @@ app.use(mockapi.middleware.errorHandler(app.get('env')));
 // api routes
 app.get('/hello/:world', routes.hello.get);
 
-app.listen(app.get('port'), function(){
+app.listen(app.get('port'), function() {
   console.log('Mock API server listening on port ' + app.get('port'));
 });
